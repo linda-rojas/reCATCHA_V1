@@ -1,0 +1,29 @@
+body,
+html {
+    height: 100%;
+}
+
+.full-height {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn-custom-green {
+    background-color: #13c33c;
+    border-color: #10d13d;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-green:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-custom-green:focus,
+.btn-custom-green.focus {
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.5);
+}

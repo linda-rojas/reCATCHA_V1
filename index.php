@@ -12,24 +12,21 @@ include_once "funcs/funcs.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>recatchap_v1</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column align-items-center h-100">
     <main class="form">
         <h2>Formulario de Verificación</h2>
         <?php if ($mensaje = getFlashData("Error")) {
             echo "<div class='alert alert-danger' role='alert'>$mensaje</div>";
         } ?>
-        <?php if ($mensaje = getFlashData("Exito")) {
-            echo "<div class='alert alert-success' role='alert'>$mensaje ✔</div>";
-        } ?>
         <form action="procesar.php" method="post">
 
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" name="nombre" class="form-control" required>
+                <input type="text" name="nombre" class="form-control" pattern="^[A-Za-zÑñ\s]+$" title="El nombre solo puede contener letras y espacios" placeholder="Ingresa tu nombre" required>
             </div>
 
             <div class="mb-3">
