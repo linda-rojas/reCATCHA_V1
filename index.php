@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include_once "funcs/funcs.php";
 
 ?>
 
@@ -18,6 +19,12 @@
 <body class="d-flex flex-column h-100">
     <main class="form">
         <h2>Formulario de Verificación</h2>
+        <?php if ($mensaje = getFlashData("Error")) {
+            echo "<div class='alert alert-danger' role='alert'>$mensaje</div>";
+        } ?>
+        <?php if ($mensaje = getFlashData("Exito")) {
+            echo "<div class='alert alert-success' role='alert'>$mensaje ✔</div>";
+        } ?>
         <form action="procesar.php" method="post">
 
             <div class="mb-3">
